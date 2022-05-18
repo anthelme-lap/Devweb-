@@ -4,16 +4,55 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+         <!--- Links to google fonts -->
+         
+        {% include "partials/style.html.twig" %}
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {# {{ encore_entry_link_tags('app') }} #}
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+            {# {{ encore_entry_script_tags('app') }} #}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        
+        <main>
+            <!-- Start: Preloader section -->
+                <div id="loader-wrapper">
+                    <div id="loader"></div>
+                </div>
+            <!-- End: Preloader section -->
+
+            {# HEADER #}
+                {% include "partials/header.html.twig" %}
+            {# END HEADER #}
+
+            {% block body %}{% endblock %}
+
+             {# footer #}
+                {% include "partials/footer.html.twig" %}
+            {# END footer #}
+        </main>
+        
+
+
+        <!-- SCRIPTS -->
+
+        <!-- jQuery (necessary for all the plugins) -->
+        <script src="js/jquery-1.11.2.min.js"></script>
+
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="js/gmaps.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+    <!-- SCRIPTS ENDS -->
     </body>
 </html>
