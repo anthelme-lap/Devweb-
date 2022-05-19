@@ -19,8 +19,12 @@ class Slider
     #[ORM\Column(type: 'text')]
     private $description;
 
+
+    #[ORM\Column(type: 'boolean')]
+    private $display = false;
+
     #[ORM\Column(type: 'string', length: 255)]
-    private $imageName;
+    private $image;
 
     public function getId(): ?int
     {
@@ -51,14 +55,27 @@ class Slider
         return $this;
     }
 
-    public function getImageName(): ?string
+
+    public function isDisplay(): ?bool
     {
-        return $this->imageName;
+        return $this->display;
     }
 
-    public function setImageName(string $imageName): self
+    public function setDisplay(bool $display): self
     {
-        $this->imageName = $imageName;
+        $this->display = $display;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

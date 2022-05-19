@@ -1,69 +1,43 @@
 <section id="banner" class="banner">  
     <div class="container">
-    <div id="ghughu-banner-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-              
+        
+        <div id="ghughu-banner-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+
         <!-- Indicators -->
             <ol class="carousel-indicators">
-            <li data-target="#ghughu-banner-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#ghughu-banner-carousel" data-slide-to="1"></li>
-            <li data-target="#ghughu-banner-carousel" data-slide-to="2"></li>
+            {% for i in  0..3 %}
+                <li data-target="#ghughu-banner-carousel" data-slide-to="{{i}}" class="{{loop.index is same as (0) ? 'active'}}"></li>
+                {# <li data-target="#ghughu-banner-carousel" data-slide-to="{{1}}"></li>
+                <li data-target="#ghughu-banner-carousel" data-slide-to="2"></li> #}
+            {% endfor %}
+                
             </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner full-height" role="listbox">
-        <div class="item active banner-item">
-                <div class="row">
-                <div class="col-sm-7">
-                        <h1 class="animated fadeInUp delay-2">We Build <br> Great Websites.</h1>
-                        <p class="animated fadeInUp delay-3">We are a digital design company based in Bangladesh, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco.</p>
+            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner full-height" role="listbox">
+            {% for item in slider %}
+                <div class="item {{ loop.index is same as(1) ? 'active'}} banner-item">
+                    <div class="row">
+                        <div class="col-sm-7">
+                            <h1 class="animated fadeInUp delay-2">{{item.title}}</h1>
+                            <p class="animated fadeInUp delay-3">{{item.description}}.</p>
+                        </div>
+                        <div class="col-sm-5 text-center hidden-xs">
+                            <img src="images/banner-carousel/{{item.image}}" class="animated fadeInUp delay-4 img-responsive" alt="banner">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-5 text-center hidden-xs">
-                    <img src="images/banner-carousel/browser.png" class="animated fadeInUp delay-4 img-responsive" alt="banner">
-                </div>
-                </div>
+            {% endfor %}    
+            </div>  
         </div>
-
-        <div class="item banner-item">
-            <div class="row">
-                <div class="col-sm-7">
-                        <h1 class="animated fadeInUp delay-2">100% <br>Responsive</h1>
-                        <p class="animated fadeInUp delay-3">We are a digital design company based in Bangladesh, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-sm-5 text-center hidden-xs">
-                    <img src="images/banner-carousel/monitor.png" class="animated fadeInUp delay-4 img-responsive" alt="banner">
-                </div>
-            </div>
-        </div>
-
-        <div class="item banner-item">
-            <div class="row">
-                <div class="col-sm-7">
-                        <h1 class="animated fadeInUp delay-2">We Make <br> Mobile Apps.</h1>
-                        <p class="animated fadeInUp delay-3">We are a digital design company based in Bangladesh, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco.</p>
-                </div>
-                <div class="col-sm-5 text-center hidden-xs">
-                    <img src="images/banner-carousel/mobile.png" class="animated fadeInUp delay-4 img-responsive" alt="banner">
-                </div>
-            </div>
-        </div>
-
-        </div>                
-        </div>
-
-              <!-- Controls -->
-              <a class="left carousel-control" href="#ghughu-banner-carousel" role="button" data-slide="prev">
-                <i><img src="images/banner-carousel/arrow-left.svg" alt="icons"></i>
-              </a>
-              <a class="right carousel-control" href="#ghughu-banner-carousel" role="button" data-slide="next">
-                <i><img src="images/banner-carousel/arrow-right.svg" alt="banner"></i>
-              </a>
-             </div> 
+        <!-- Controls -->
+        <a class="left carousel-control" href="#ghughu-banner-carousel" role="button" data-slide="prev">
+        <i><img src="images/banner-carousel/arrow-left.svg" alt="icons"></i>
+        </a>
+        <a class="right carousel-control" href="#ghughu-banner-carousel" role="button" data-slide="next">
+        <i><img src="images/banner-carousel/arrow-right.svg" alt="banner"></i>
+        </a>    
+    </div> 
 </section>
 
 <section id="who-are-we" class="who-are-we page">

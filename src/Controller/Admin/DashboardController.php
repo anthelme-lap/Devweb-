@@ -2,11 +2,16 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Slider;
 use App\Entity\Contact;
 use App\Controller\HomeController;
 use App\Controller\ContactController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Controller\Admin\ContactCrudController;
+use App\Entity\Services;
+use App\Entity\Whoareyou;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
@@ -22,7 +27,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         // return parent::index();
-        $url = $this->adminUrlGenerator->setController(ContactController::class)->generateUrl();
+        $url = $this->adminUrlGenerator->setController(SliderCrudController::class)->generateUrl();
         return $this->redirect($url);
     }
 
@@ -36,9 +41,17 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::section('Tableau De Bord');
         yield MenuItem::subMenu('Slider', 'fas fa-bars')->setSubItems([
-            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Contact::class)
+            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Slider::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Afficher', 'fas fa-eye', Slider::class)->setAction(Crud::PAGE_INDEX)
         ]);
-        yield MenuItem::section('Tableau De Bord');
-        // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+        yield MenuItem::subMenu('SERVICES', 'fas fa-bars')->setSubItems([
+            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Services::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Afficher', 'fas fa-eye', Services::class)->setAction(Crud::PAGE_INDEX)
+        ]);
+        yield MenuItem::subMenu('QUI SOMMES-NOUS ?', 'fas fa-bars')->setSubItems([
+            MenuItem::linkToCrud('Ajouter', 'fas fa-plus', Whoareyou::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Afficher', 'fas fa-eye', Whoareyou::class)->setAction(Crud::PAGE_INDEX)
+        ]);
+
     }
 }

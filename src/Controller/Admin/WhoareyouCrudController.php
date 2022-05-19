@@ -2,24 +2,24 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Contact;
+use App\Entity\Whoareyou;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class ContactCrudController extends AbstractCrudController
+class WhoareyouCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Contact::class;
+        return Whoareyou::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
+            IdField::new('id')->hideOnForm(),
             TextEditorField::new('description'),
         ];
     }
-    */
 }
