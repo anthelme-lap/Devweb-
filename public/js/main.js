@@ -86,25 +86,10 @@ map.addMarker({
  * CONTACT FORM                    
  * ================================
  */
-
-$('#contact-form').validate({
-	rules:{
-		name:'required',
-		email: 'required',
-		message: 'required'
-	},
-
-	messages:{
-		name:'Please enter your name',
-		email:'Please enter a valid email',
-		message: 'Please write down your messsage'
-	},
-
-    errorClass:"local-error",
-
-	submitHandler: function(){
-        
-    }
+var btn = document.querySelector('#contact-form');
+btn.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log(e);
 })
 
 

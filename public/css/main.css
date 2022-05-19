@@ -295,13 +295,13 @@ p {
 /* line 61, ../scss/modules/_blocks.scss */
 .team-member-img {
   width: 100%;
-  height: 230px;
-  background-image: url("../images/about-us/5.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  margin-bottom: 40px;
-  border-top: 5px solid #090909;
+  height: 320px;
+  /* background-image: url("../images/about-us/koffi.png"); */
+  /* background-size: cover; */
+  /* background-position: center center; */
+  /* background-repeat: no-repeat; */
+  /* margin-bottom: 40px; */
+  /* border-top: 5px solid #090909; */
 }
 
 /* line 73, ../scss/modules/_blocks.scss */
@@ -405,7 +405,7 @@ p {
 /*about banner*/
 /* line 55, ../scss/modules/_sections.scss */
 .about-banner {
-  background-color: #bfe2e6;
+  background-color: #f7d0cd;
 }
 
 /* line 59, ../scss/modules/_sections.scss */

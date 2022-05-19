@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ContactRepository;
+use App\Repository\AdressRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ContactRepository::class)]
-class Contact
+#[ORM\Entity(repositoryClass: AdressRepository::class)]
+class Adress
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -14,7 +14,7 @@ class Contact
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $name;
+    private $location;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $phone;
@@ -22,25 +22,25 @@ class Contact
     #[ORM\Column(type: 'string', length: 255)]
     private $email;
 
-    #[ORM\Column(type: 'text', length: 255)]
-    private $content;
-
     #[ORM\Column(type: 'string', length: 255)]
-    private $subject;
+    private $facebook;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $instagram;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getLocation(): ?string
     {
-        return $this->name;
+        return $this->location;
     }
 
-    public function setName(string $name): self
+    public function setLocation(string $location): self
     {
-        $this->name = $name;
+        $this->location = $location;
 
         return $this;
     }
@@ -69,26 +69,26 @@ class Contact
         return $this;
     }
 
-    public function getContent(): ?string
+    public function getFacebook(): ?string
     {
-        return $this->content;
+        return $this->facebook;
     }
 
-    public function setContent(string $content): self
+    public function setFacebook(string $facebook): self
     {
-        $this->content = $content;
+        $this->facebook = $facebook;
 
         return $this;
     }
 
-    public function getSubject(): ?string
+    public function getInstagram(): ?string
     {
-        return $this->subject;
+        return $this->instagram;
     }
 
-    public function setSubject(string $subject): self
+    public function setInstagram(?string $instagram): self
     {
-        $this->subject = $subject;
+        $this->instagram = $instagram;
 
         return $this;
     }

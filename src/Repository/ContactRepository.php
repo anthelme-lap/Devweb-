@@ -21,7 +21,7 @@ class ContactRepository extends ServiceEntityRepository
         parent::__construct($registry, Contact::class);
     }
 
-    public function add(Contact $entity, bool $flush = false): void
+    public function add(Contact $entity, bool $flush = true): void
     {
         $this->getEntityManager()->persist($entity);
 

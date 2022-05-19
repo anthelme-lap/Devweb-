@@ -53,17 +53,10 @@
             </div>
             <div class="col-md-6">
                 <div class="form-wrapper">
-                    <form id="contact-form" action="">
-                        <label for="name">Nom:</label>
-                        <input type="text" name="name" id="name" placeholder="your name">
-                        <label for="email">Your phone:</label>
-                        <input type="email" name="email" id="email" placeholder="your phone">
-                        <label for="email">Your email:</label>
-                        <input type="email" name="email" id="email" placeholder="your email">
-                        <label for="message">Your message:</label>
-                        <textarea name="message" id="message" placeholder="message"></textarea>
-                        <input class="custom-button" type="submit" name="submit" value="send message">
-                    </form>           
+                    {{ form_start(form, {attr: {'id':'contact-form'}}) }}
+                        {{form_widget(form)}}
+                        <input class="custom-button" type="submit" name="submit" value="Envoyer">
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
