@@ -154,7 +154,7 @@ p {
 }
 /* line 15, ../scss/layout/_nav.scss */
 .navbar-default .navbar-brand:hover {
-  color: #f2013f;
+  color: #bfe2e6;
 }
 /* line 19, ../scss/layout/_nav.scss */
 .navbar-default .navbar-brand span.thin {
@@ -163,7 +163,7 @@ p {
 /* line 24, ../scss/layout/_nav.scss */
 .navbar-default .navbar-toggle {
   border: none;
-  background-color: #f2013f;
+  background-color: #bfe2e6;
 }
 /* line 28, ../scss/layout/_nav.scss */
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
@@ -187,7 +187,7 @@ p {
 /* line 47, ../scss/layout/_nav.scss */
 .navbar-default .navbar-nav > li > a:hover {
   background-color: transparent;
-  color: #f2013f;
+  color: #bfe2e6;
 }
 /* line 52, ../scss/layout/_nav.scss */
 .navbar-default .navbar-nav > li > a:focus {
@@ -196,12 +196,12 @@ p {
 /* line 57, ../scss/layout/_nav.scss */
 .navbar-default .navbar-nav > li.active > a {
   background-color: #090909;
-  color: #f2013f;
+  color: #bfe2e6;
 }
 /* line 61, ../scss/layout/_nav.scss */
 .navbar-default .navbar-nav > li.active > a:hover {
   background-color: transparent;
-  color: #f2013f;
+  color: #bfe2e6;
 }
 /* line 67, ../scss/layout/_nav.scss */
 .navbar-default .navbar-collapse {
@@ -361,7 +361,7 @@ p {
 /* banner section */
 /* line 11, ../scss/modules/_sections.scss */
 .banner {
-  background-color: #f2013f;
+  background-color: #bfe2e6;
 }
 /* line 14, ../scss/modules/_sections.scss */
 .banner .container {
@@ -388,7 +388,7 @@ p {
 
 /* line 38, ../scss/modules/_sections.scss */
 .services {
-  background-color: #f2013f;
+  background-color: #bfe2e6;
 }
 
 /*cta*/
@@ -405,7 +405,7 @@ p {
 /*about banner*/
 /* line 55, ../scss/modules/_sections.scss */
 .about-banner {
-  background-color: #f2013f;
+  background-color: #bfe2e6;
 }
 
 /* line 59, ../scss/modules/_sections.scss */
